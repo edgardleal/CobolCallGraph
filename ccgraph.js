@@ -18,6 +18,22 @@ var NodeType = {
  */
 const IS_DEBUG = false;
 
+var userLang = navigator.language || navigator.userLanguage; 
+const locales = {
+   "pt-BR" : {},
+   "default": {
+    max_line_per_procedure: "Syntax Exception - Max line number per procedure raised",
+    lines_of_code: "lines of code finded.",
+    program_name_finded: "Program name finded on line",
+    procedure_begin: "Starting procedure",
+    procedure_exit: "Exiting procedure",
+    stargin_cics: "Starting an cics call",
+    syntax_error: "Syntax error",
+    }
+};
+
+var messages = locales[userLang] || locales.default;
+
 /**
  * Use this function instead console.log to keep control on when debug messages should be printed on console.
  */
